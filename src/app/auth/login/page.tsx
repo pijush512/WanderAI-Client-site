@@ -58,7 +58,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-sm text-slate-600 dark:text-slate-400 mt-6">
-          অ্যাকাউন্ট নেই? <Link href="/auth/register" className="text-blue-600 font-semibold">Sign Up</Link>
+          No Account <Link href="/auth/register" className="text-blue-600 font-semibold">Sign Up</Link>
         </p>
       </div>
     </div>
