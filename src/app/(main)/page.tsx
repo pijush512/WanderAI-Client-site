@@ -1,16 +1,17 @@
-import Banner from "@/src/components/Banner";
+import Banner from '@/src/components/Banner';
+import PopularTrips from '@/src/components/PopularTrips'; // পাথটি আপনার ফোল্ডার অনুযায়ী চেক করে নিন
+import React from 'react';
 
-export default function Home() {
+const Page = () => {
   return (
-    <div>
-      <Banner></Banner>
-
-      <div className="h-40 w-full flex items-center justify-center bg-blue-100 dark:bg-blue-900 transition-all">
-  <p className="text-blue-900 dark:text-blue-100 font-bold text-2xl">
-    {/* লাইট মোডে এটি নীল দেখাবে, ডার্ক মোডে এটি আকাশী নীল দেখাবে */}
-    WanderAI Theme Test
-  </p>
-</div>
-    </div>
+    <main>
+      {/* ব্যানার সেকশন */}
+      <Banner />
+      
+      {/* পপুলার ট্রিপস সেকশন (যেটা আমরা একটু আগে ফিক্স করলাম) */}
+      <PopularTrips />
+    </main>
   );
-}
+};
+
+export default Page;
