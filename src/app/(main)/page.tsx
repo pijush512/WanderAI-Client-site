@@ -1,15 +1,26 @@
-import Banner from '@/src/components/Banner';
-import PopularTrips from '@/src/components/PopularTrips'; // পাথটি আপনার ফোল্ডার অনুযায়ী চেক করে নিন
-import React from 'react';
+"use client";
+import AIPromptBox from "@/src/components/AIPromptBox";
+import Banner from "@/src/components/Banner";
+import CategoryScroll from "@/src/components/CategoryScroll";
+import PopularTrips from "@/src/components/PopularTrips";
+import LiveReviews from "@/src/components/Reviews";
+import React, { useState } from "react";
 
 const Page = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  
   return (
     <main>
-      {/* ব্যানার সেকশন */}
       <Banner />
-      
-      {/* পপুলার ট্রিপস সেকশন (যেটা আমরা একটু আগে ফিক্স করলাম) */}
-      <PopularTrips />
+      <AIPromptBox></AIPromptBox>
+      <CategoryScroll
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+      ></CategoryScroll>
+      <PopularTrips
+      activeCategory={activeCategory}
+      ></PopularTrips>
+      <LiveReviews></LiveReviews>
     </main>
   );
 };

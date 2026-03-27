@@ -10,12 +10,17 @@ interface MainLayoutProps {
 const MainLayout = ({children}: MainLayoutProps) => {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <main>{children}</main>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
       
     </div>
+
+    
   )
 }
 
 export default MainLayout;
+
+
+

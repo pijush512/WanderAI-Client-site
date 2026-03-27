@@ -1,29 +1,9 @@
-/* @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #0f172a; 
-  --primary: #2563eb;  
-  --secondary: #64748b; 
-  --accent: #f59e0b;     
-}
-
-
-.dark {
-  --background: #020617; 
-  --foreground: #f8fafc; 
-  --primary: #3b82f6;    
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
-  transition: background-color 0.3s ease, color 0.3s ease;
-} */
-
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
+
+html {
+  scroll-behavior: smooth !important;
+}
 
 @layer base {
   :root {

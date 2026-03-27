@@ -1,134 +1,129 @@
-// import Link from 'next/link'
-// import React from 'react'
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-//       <div className="max-w-7xl mx-auto px-6">
-//         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          
-//           {/* ১. ব্র্যান্ড ইনফো */}
-//           <div className="col-span-1 md:col-span-1">
-//             <Link href="/" className="text-2xl font-bold text-white tracking-tight">
-//               Wander<span className="text-blue-500">AI</span>
-//             </Link>
-//             <p className="mt-4 text-sm leading-relaxed">
-//               Your smart AI travel companion. Plan, explore, and discover the world's hidden gems with ease.
-//             </p>
-//           </div>
-
-//           {/* ২. কুইক লিঙ্কস */}
-//           <div>
-//             <h4 className="text-white font-semibold mb-6">Explore</h4>
-//             <ul className="space-y-4 text-sm">
-//               <li><Link href="/destinations" className="hover:text-blue-400 transition">Destinations</Link></li>
-//               <li><Link href="/ai-planner" className="hover:text-blue-400 transition">AI Planner</Link></li>
-//               <li><Link href="/pricing" className="hover:text-blue-400 transition">Pricing Plans</Link></li>
-//             </ul>
-//           </div>
-
-//           {/* ৩. কোম্পানি */}
-//           <div>
-//             <h4 className="text-white font-semibold mb-6">Company</h4>
-//             <ul className="space-y-4 text-sm">
-//               <li><Link href="/about" className="hover:text-blue-400 transition">About Us</Link></li>
-//               <li><Link href="/blogs" className="hover:text-blue-400 transition">Travel Blogs</Link></li>
-//               <li><Link href="/careers" className="hover:text-blue-400 transition">Careers</Link></li>
-//             </ul>
-//           </div>
-
-//           {/* ৪. নিউজলেটার বা সাপোর্ট */}
-//           <div>
-//             <h4 className="text-white font-semibold mb-6">Support</h4>
-//             <ul className="space-y-4 text-sm">
-//               <li><Link href="/contact" className="hover:text-blue-400 transition">Help Center</Link></li>
-//               <li><Link href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</Link></li>
-//               <li><Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link></li>
-//             </ul>
-//           </div>
-
-//         </div>
-
-//         {/* নিচের কপিরাইট অংশ */}
-//         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-//           <p className="text-xs">
-//             © {new Date().getFullYear()} WanderAI. All rights reserved.
-//           </p>
-//           <div className="flex gap-6 text-xs uppercase tracking-widest font-bold">
-//             <a href="#" className="hover:text-white transition">FB</a>
-//             <a href="#" className="hover:text-white transition">TW</a>
-//             <a href="#" className="hover:text-white transition">IG</a>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   )
-// }
-
-// export default Footer
-
-
 "use client";
 
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Github, Mail } from "lucide-react";
+import { Facebook, Twitter, Instagram, Github, Mail, Plane, MapPin, Send } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
-          {/* ১. ব্র্যান্ড সেকশন */}
-          <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-blue-600 tracking-tight">
-              Wander<span className="text-slate-800 dark:text-white">AI</span>
+          {/* 1. Brand Section */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center gap-2 text-2xl font-extrabold text-blue-600 tracking-tight">
+              <Plane className="rotate-45" size={28} />
+              Wander<span className="text-slate-900 dark:text-white">AI</span>
             </Link>
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              আপনার ভ্রমণকে সহজ এবং স্মার্ট করতে আমাদের AI সবসময় আপনার পাশে আছে। নতুন জায়গা খুঁজুন এক ক্লিকেই।
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+              "Your intelligent travel companion. We use AI to craft personalized itineraries that turn your dream vacations into reality."
             </p>
+            <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mt-2">
+              <MapPin size={16} className="text-blue-600" />
+              <span className="text-xs font-medium">Based in Tangail, Bangladesh</span>
+            </div>
           </div>
 
-          {/* ২. কুইক লিংকস */}
+          {/* 2. Exploration Links */}
           <div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
-              <li><Link href="/explore" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Explore Hotels</Link></li>
-              <li><Link href="/about" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">AI Guide</Link></li>
-              <li><Link href="/contact" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Support</Link></li>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Explore</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/explore" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Explore
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/howItWorks" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  How It Works
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* ৩. লিগ্যাল সেকশন */}
+          {/* 3. Support & Legal */}
           <div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Legal</h3>
-            <ul className="mt-4 space-y-2">
-              <li><Link href="/privacy" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Terms of Service</Link></li>
-              <li><Link href="/cookie" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition">Cookie Policy</Link></li>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Support</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/contact" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all hover:pl-1">
+                  Cookie Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* ৪. নিউজলেটার/কন্টাক্ট */}
-          <div>
-            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Connect</h3>
-            <div className="flex gap-4 mt-4">
-              <Link href="#" className="p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:text-blue-600 transition"><Facebook size={18} /></Link>
-              <Link href="#" className="p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:text-blue-600 transition"><Twitter size={18} /></Link>
-              <Link href="#" className="p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:text-blue-600 transition"><Instagram size={18} /></Link>
-              <Link href="#" className="p-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:text-blue-600 transition"><Github size={18} /></Link>
+          {/* 4. Newsletter & Social */}
+          <div className="flex flex-col gap-6">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">Get Updates</h3>
+            <div className="relative group">
+              <input 
+                type="email" 
+                placeholder="Enter email" 
+                className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 py-3 px-4 pr-12 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+              />
+              <button className="absolute right-2 top-1.5 p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                <Send size={16} />
+              </button>
+            </div>
+            <div className="flex gap-4">
+              <Link href="https://facebook.com" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <Facebook size={18} />
+              </Link>
+              <Link href="https://twitter.com" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <Twitter size={18} />
+              </Link>
+              <Link href="https://instagram.com" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <Instagram size={18} />
+              </Link>
+              <Link href="https://github.com/pijush512" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <Github size={18} />
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* বটম কপিরাইট */}
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500 dark:text-slate-500">
-            © {new Date().getFullYear()} WanderAI Inc. All rights reserved.
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[11px] font-medium text-slate-500 dark:text-slate-500 uppercase tracking-widest">
+            © {new Date().getFullYear()} WanderAI Inc. Designed by Pijush Sarker.
           </p>
-          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-500">
-            <Mail size={14} />
-            <span>hello@wanderai.com</span>
+          
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <Mail size={14} className="text-blue-600" />
+              <span>support@wanderai.com</span>
+            </div>
+            <div className="h-4 w-px bg-slate-300 dark:bg-slate-800 hidden md:block" />
+            <div className="flex gap-4 text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+              <span>English (US)</span>
+              <span>USD ($)</span>
+            </div>
           </div>
         </div>
       </div>
