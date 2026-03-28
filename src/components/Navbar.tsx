@@ -79,7 +79,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 z-[100] transition-all">
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
-        {/* Logo Section */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="p-2 bg-blue-600 text-white rounded-xl group-hover:rotate-[360deg] transition-transform duration-700">
             <Plane size={20} className="rotate-45" />
@@ -89,7 +88,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -112,20 +110,16 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right Actions */}
         <div className="flex items-center gap-3">
-          {/* Theme Toggle Button */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all active:scale-90"
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-
           <div className="h-6 w-[1px] bg-slate-200 dark:bg-slate-800 mx-1 hidden md:block" />
 
           {token ? (
-            /* Profile Section */
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
@@ -149,7 +143,6 @@ export default function Navbar() {
                 />
               </button>
 
-              {/* Enhanced Dropdown Menu */}
               {isProfileOpen && (
                 <div className="absolute right-0 mt-3 w-64 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl py-3 z-[110] animate-in fade-in slide-in-from-top-3">
                   <div className="px-5 py-3 border-b border-slate-100 dark:border-slate-800 mb-2">
@@ -192,18 +185,11 @@ export default function Navbar() {
               )}
             </div>
           ) : (
-            /* Guest Buttons */
-            // <div className="hidden md:flex items-center gap-3">
-            //   <Link href="/auth/login" className="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:text-blue-600">
-            //     Login
-            //   </Link>
-            // </div>
             <div className="hidden md:flex items-center gap-3">
               <Link
                 href="/auth/login"
                 className="relative flex items-center justify-center px-8 py-2.5 rounded-xl font-bold text-[11px] uppercase tracking-[0.15em] text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-500/25 active:scale-[0.96] overflow-hidden group"
               >
-                {/* হালকা একটা শাইন ইফেক্ট মাউস নিলে স্লাইড করবে */}
                 <span className="absolute inset-0 w-full h-full bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
 
                 <span className="relative">Login</span>
@@ -211,7 +197,6 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-slate-600 dark:text-slate-300"
             onClick={() => setIsOpen(!isOpen)}
@@ -221,7 +206,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 px-6 py-8 flex flex-col gap-5 animate-in slide-in-from-top">
           {navLinks.map((link) => (

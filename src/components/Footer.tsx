@@ -8,8 +8,6 @@ const Footer = () => {
     <footer className="w-full bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
-          {/* 1. Brand Section */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2 text-2xl font-extrabold text-blue-600 tracking-tight">
               <Plane className="rotate-45" size={28} />
@@ -23,8 +21,6 @@ const Footer = () => {
               <span className="text-xs font-medium">Based in Tangail, Bangladesh</span>
             </div>
           </div>
-
-          {/* 2. Exploration Links */}
           <div>
             <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Explore</h3>
             <ul className="space-y-4">
@@ -50,8 +46,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* 3. Support & Legal */}
           <div>
             <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6">Support</h3>
             <ul className="space-y-4">
@@ -77,8 +71,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* 4. Newsletter & Social */}
           <div className="flex flex-col gap-6">
             <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">Get Updates</h3>
             <div className="relative group">
@@ -108,7 +100,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[11px] font-medium text-slate-500 dark:text-slate-500 uppercase tracking-widest">
             © {new Date().getFullYear()} WanderAI Inc. Designed by Pijush Sarker.
