@@ -10,7 +10,6 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Mimicking API Call
     setTimeout(() => {
       setSubmitting(false);
       setSent(true);
@@ -19,15 +18,12 @@ export default function ContactPage() {
 
   return (
     <section className="relative min-h-screen py-32 bg-white dark:bg-[#020617] transition-all duration-500 overflow-hidden">
-      
-      {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full -ml-64 -mt-64"></div>
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/5 blur-[100px] rounded-full -mr-32 -mb-32"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           
-          {/* Left Column: Info & Content */}
           <div className="space-y-16">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg mb-8">
@@ -42,7 +38,6 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Contact Details Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="group">
                 <div className="w-14 h-14 bg-slate-50 dark:bg-slate-900/50 rounded-2xl flex items-center justify-center border border-slate-100 dark:border-slate-800 group-hover:border-blue-500/50 transition-all mb-4">
@@ -60,8 +55,6 @@ export default function ContactPage() {
                 <p className="text-sm font-bold dark:text-white">Tangail, Dhaka Division</p>
               </div>
             </div>
-
-            {/* Social Links */}
             <div className="flex items-center gap-4 pt-8 border-t border-slate-100 dark:border-slate-800">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mr-4">Follow Us</p>
               <button className="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl hover:text-blue-600 transition-colors"><Twitter size={18} /></button>
@@ -69,9 +62,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right Column: Contact Form Card */}
           <div className="relative group">
-            {/* Background Glow behind the card */}
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[3.1rem] blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
             
             <div className="relative p-8 md:p-12 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[3rem] shadow-2xl">

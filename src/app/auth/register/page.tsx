@@ -64,8 +64,6 @@ const RegisterPage: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 p-6">
       <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 p-8">
-        
-        {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
             Join <span className="text-blue-600">WanderAI</span>
@@ -141,7 +139,7 @@ const RegisterPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Profile Image Input */}
+          {/* Profile Image */}
           <div>
             <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 ml-1">
               Profile Image (Optional)

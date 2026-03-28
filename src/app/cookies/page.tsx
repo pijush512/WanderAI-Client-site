@@ -9,8 +9,6 @@ const CookiePolicy = () => {
   return (
     <div className="bg-white dark:bg-[#020617] min-h-screen pt-28 pb-20 px-6 transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
-        
-        {/* Header Section */}
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 mb-6">
             <Cookie className="text-blue-600" size={20} />
@@ -23,11 +21,7 @@ const CookiePolicy = () => {
             Last Updated: {lastUpdated}
           </p>
         </div>
-
-        {/* Content Section */}
         <div className="space-y-12 text-slate-700 dark:text-slate-300">
-          
-          {/* 1. What are Cookies */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -39,8 +33,6 @@ const CookiePolicy = () => {
               Cookies are small text files stored on your device that help <strong>WanderAI</strong> remember your preferences. They allow us to recognize you when you return and provide a seamless AI-driven experience.
             </p>
           </section>
-
-          {/* 2. Types of Cookies We Use */}
           <section className="group">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -68,8 +60,6 @@ const CookiePolicy = () => {
               </div>
             </div>
           </section>
-
-          {/* 3. Managing Cookies */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -81,8 +71,6 @@ const CookiePolicy = () => {
               Most web browsers allow you to control cookies through their settings. However, if you limit the ability of websites to set cookies, you may worsen your overall user experience, as it will no longer be personalized to your travel style.
             </p>
           </section>
-
-          {/* 4. Privacy Sync */}
           <section className="group border-t border-slate-100 dark:border-slate-800 pt-8 text-center">
             <div className="flex flex-col items-center gap-4">
               <ShieldCheck size={32} className="text-blue-600" />
@@ -93,8 +81,6 @@ const CookiePolicy = () => {
           </section>
 
         </div>
-
-        {/* Floating Action Hint */}
         <div className="mt-20 flex flex-col items-center gap-6">
           <div className="flex items-center gap-3 px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-black uppercase tracking-widest text-[10px]">
             <MousePointer2 size={14} />
