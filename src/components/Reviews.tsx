@@ -45,19 +45,16 @@ const LiveReviews = () => {
     </div>
   );
 
-  // ডুপ্লিকেট রিভিউ তৈরি করা যাতে অ্যানিমেশন লুপে কোনো গ্যাপ না থাকে
   const marqueeReviews = [...reviews, ...reviews, ...reviews];
 
   return (
     <section className="relative py-28 bg-white dark:bg-[#020617] transition-all overflow-hidden">
-      {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10">
-        {/* Centered Header Section */}
         <div className="flex flex-col items-center text-center mb-20 px-6 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-xl shadow-sm">
             <MessageSquareQuote size={16} className="text-blue-600" />
@@ -72,8 +69,6 @@ const LiveReviews = () => {
             Real experiences from travelers around the globe
           </p>
         </div>
-
-        {/* Infinite Horizontal Scroll Container */}
         {reviews.length > 0 ? (
           <div className="relative flex overflow-hidden py-10">
             <div className="flex gap-8 animate-marquee whitespace-nowrap hover:[animation-play-state:paused]">
@@ -88,7 +83,6 @@ const LiveReviews = () => {
                     className="w-[350px] md:w-[450px] shrink-0 bg-slate-50/50 dark:bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 transition-all duration-500 hover:border-blue-500/30 hover:bg-white dark:hover:bg-slate-900 group shadow-sm"
                   >
                     <div className="flex flex-col h-full">
-                      {/* Rating & Quote */}
                       <div className="flex justify-between items-start mb-6">
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
@@ -101,13 +95,10 @@ const LiveReviews = () => {
                         </div>
                         <Quote className="text-slate-200 dark:text-slate-800 group-hover:text-blue-500/20 transition-colors" size={32} />
                       </div>
-
-                      {/* Comment */}
                       <p className="text-slate-700 dark:text-slate-300 text-base md:text-lg font-bold leading-relaxed italic whitespace-normal mb-8">
                         "{review.comment}"
                       </p>
 
-                      {/* User Info */}
                       <div className="mt-auto flex items-center gap-4 pt-6 border-t border-slate-100 dark:border-slate-800/50">
                         <img 
                           src={userImg} 
@@ -131,13 +122,10 @@ const LiveReviews = () => {
                 );
               })}
             </div>
-
-            {/* Side Gradients for Fade Effect */}
             <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white dark:from-[#020617] to-transparent z-20 pointer-events-none" />
             <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white dark:from-[#020617] to-transparent z-20 pointer-events-none" />
           </div>
         ) : (
-          /* Empty State */
           <div className="max-w-2xl mx-auto text-center py-20 px-6">
             <div className="bg-slate-50 dark:bg-slate-900/40 rounded-[2rem] border-2 border-dashed border-slate-200 dark:border-slate-800 p-12">
                <MessageSquareQuote className="text-slate-300 mx-auto mb-4" size={40} />

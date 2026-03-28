@@ -54,8 +54,6 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
   return (
     <section className="py-24 bg-white dark:bg-[#020617] transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Centered Header Section */}
         <div id="popular-destini" className="flex flex-col items-center text-center mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-xl">
             <Sparkles size={16} className="text-blue-600" />
@@ -72,8 +70,6 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
             Expertly crafted itineraries for your next big adventure
           </p>
         </div>
-
-        {/* Professional Minimalist Grid */}
         {filteredTrips.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {filteredTrips.map((trip) => (
@@ -81,7 +77,6 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
                 key={trip._id} 
                 className="group flex flex-col bg-slate-50/50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800 rounded-[2rem] overflow-hidden transition-all duration-300 hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/20"
               >
-                {/* Simplified Card Top */}
                 <div className="p-8 pb-4">
                   <div className="flex justify-between items-start mb-6">
                     <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 dark:border-slate-700">
@@ -110,7 +105,6 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
                   </div>
                 </div>
 
-                {/* Content Body */}
                 <div className="p-8 pt-0 flex flex-col flex-grow">
                   <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8 line-clamp-2 italic">
                     "A unique {trip.budget} journey through the heart of {trip.destination}."
@@ -132,7 +126,6 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
           </div>
         )}
 
-        {/* Standard Action Button */}
         <div className="flex justify-center">
           <Link href="/explore" className="group flex items-center gap-4 px-10 py-5 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white rounded-full font-black text-[10px] uppercase tracking-[0.25em] transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900">
             Explore All <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
