@@ -131,7 +131,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.removeItem("user");
 
     // লগআউট করার পর ইউজারকে হোমপেজে বা লগইন পেজে পাঠানো
-    router.replace("/auth/login");
+    router.replace("/");
   };
 
   return (
