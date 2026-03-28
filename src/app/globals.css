@@ -14,7 +14,6 @@ html {
     --accent: #f59e0b;
   }
 
-  /* .dark ক্লাস থাকলে এই ভ্যারিয়েবলগুলো আপডেট হবে */
   .dark {
     --background: #020617; /* Slate 950 */
     --foreground: #f8fafc; /* Slate 50 */

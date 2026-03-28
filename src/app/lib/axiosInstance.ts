@@ -7,10 +7,8 @@ const axiosInstance = axios.create({
   },
 });
 
-// রিকোয়েস্ট পাঠানোর আগে টোকেন অ্যাড করার জন্য ইন্টারসেপ্টর
 axiosInstance.interceptors.request.use(
   (config) => {
-    // যেহেতু localStorage শুধু ব্রাউজারে থাকে, তাই এই চেকটি জরুরি
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('token');
       if (token) {

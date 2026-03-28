@@ -9,8 +9,6 @@ const TermsOfService = () => {
   return (
     <div className="bg-white dark:bg-[#020617] min-h-screen pt-28 pb-20 px-6 transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
-        
-        {/* Header Section */}
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 mb-6">
             <Scale className="text-blue-600" size={20} />
@@ -23,11 +21,7 @@ const TermsOfService = () => {
             Last Updated: {lastUpdated}
           </p>
         </div>
-
-        {/* Content Section */}
         <div className="space-y-12 text-slate-700 dark:text-slate-300">
-          
-          {/* 1. Acceptance of Terms */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -39,8 +33,6 @@ const TermsOfService = () => {
               By accessing or using <strong>WanderAI</strong>, you agree to be bound by these Terms of Service. If you do not agree to all of these terms, please do not use our AI-powered travel services.
             </p>
           </section>
-
-          {/* 2. AI Limitations */}
           <section className="group border-l-4 border-blue-500 pl-6 py-2 bg-blue-50/30 dark:bg-blue-900/10 rounded-r-2xl">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white">
@@ -52,8 +44,6 @@ const TermsOfService = () => {
               Our service uses advanced AI models to generate travel plans. While we strive for accuracy, AI results may contain errors or outdated information regarding prices, availability, or local safety. Always verify critical information with primary sources.
             </p>
           </section>
-
-          {/* 3. User Conduct */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-red-500 group-hover:text-white transition-all">
@@ -70,8 +60,6 @@ const TermsOfService = () => {
               </ul>
             </div>
           </section>
-
-          {/* 4. Limitation of Liability */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -83,8 +71,6 @@ const TermsOfService = () => {
               WanderAI shall not be liable for any indirect, incidental, or consequential damages resulting from your travel decisions, missed flights, or hotel cancellations based on our AI recommendations. Use the service at your own discretion.
             </p>
           </section>
-
-          {/* 5. Changes to Service */}
           <section className="group">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -98,8 +84,6 @@ const TermsOfService = () => {
           </section>
 
         </div>
-
-        {/* Action Box */}
         <div className="mt-20 p-8 rounded-[2.5rem] bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 text-center">
           <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 max-w-md mx-auto">
             By clicking "Accept", you acknowledge that you have read and understood our legal guidelines.

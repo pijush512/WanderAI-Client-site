@@ -37,14 +37,9 @@ export default function PublicTripDetails() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#020617] transition-colors duration-500 pb-20 selection:bg-blue-100 selection:text-blue-900">
-      
-      {/* --- হিরো ব্যানার সেকশন --- */}
       <div className="relative h-[70vh] w-full bg-slate-900 flex items-center justify-center overflow-hidden">
-        {/* Background Gradient & Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/40 via-indigo-900/60 to-slate-950 z-0" />
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] z-0" />
-        
-        {/* Back Button */}
         <button 
           onClick={() => router.back()}
           className="absolute top-10 left-10 z-30 flex items-center gap-2 text-white/50 hover:text-white font-black uppercase text-[10px] tracking-[0.3em] transition-all group"
@@ -65,8 +60,6 @@ export default function PublicTripDetails() {
             Welcome to your personalized guide for <span className="text-white font-bold not-italic underline decoration-blue-500 underline-offset-4">{trip.destination}</span>. 
             Our AI has curated a <span className="text-white font-bold">{trip.days}-day</span> adventure optimized for a <span className="text-white font-bold">{trip.budget}</span> budget.
           </p>
-
-          {/* Quick Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               { label: "Duration", value: `${trip.days} Days`, icon: <Calendar size={14} /> },
@@ -85,16 +78,11 @@ export default function PublicTripDetails() {
         </div>
       </div>
 
-      {/* --- কন্টেন্ট এরিয়া --- */}
       <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
         <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[4rem] p-8 md:p-20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)]">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-            
-            {/* Left Column (8/12) */}
             <div className="lg:col-span-8 space-y-20">
-              
-              {/* Itinerary Header */}
               <div className="space-y-4">
                 <h2 className="text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
                   Itinerary <span className="text-blue-600 font-medium">Overview</span>
@@ -104,7 +92,6 @@ export default function PublicTripDetails() {
                 </div>
               </div>
 
-              {/* Day-wise Cards */}
               <div className="space-y-12">
                 {trip.itinerary?.map((item: any, idx: number) => (
                   <div key={idx} className="group bg-slate-50 dark:bg-slate-800/30 rounded-[3.5rem] p-10 border border-slate-100 dark:border-slate-800 transition-all hover:border-blue-200 dark:hover:border-blue-900">
@@ -151,7 +138,7 @@ export default function PublicTripDetails() {
                 ))}
               </div>
 
-              {/* Review Section */}
+              {/* Review */}
               <div className="py-20 bg-slate-900 dark:bg-blue-600 rounded-[4rem] text-center px-10 space-y-8 text-white">
                 <h2 className="text-4xl font-black uppercase tracking-tighter">Rate Your AI Experience</h2>
                 <div className="flex justify-center gap-2">
@@ -167,10 +154,7 @@ export default function PublicTripDetails() {
               </div>
             </div>
 
-            {/* Right Column (4/12) */}
             <div className="lg:col-span-4 space-y-12">
-              
-              {/* Cost Summary */}
               <div className="p-10 bg-slate-50 dark:bg-slate-800/50 rounded-[3.5rem] border border-slate-100 dark:border-slate-800 space-y-6">
                 <div className="flex items-center justify-between">
                   <h4 className="font-black uppercase text-[10px] tracking-widest text-slate-400">Estimated Cost</h4>
@@ -183,8 +167,6 @@ export default function PublicTripDetails() {
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest italic">Per person average</p>
                 </div>
               </div>
-
-              {/* Travel Tips */}
               <div className="p-10 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[3.5rem] shadow-2xl">
                  <h4 className="flex items-center gap-3 font-black uppercase text-[10px] tracking-widest mb-8 border-b border-white/10 dark:border-slate-200 pb-4">
                    <Lightbulb className="text-yellow-400" size={16} /> Travel Tips
@@ -199,7 +181,6 @@ export default function PublicTripDetails() {
                  </div>
               </div>
 
-              {/* Suggested Next List */}
               <div className="space-y-8 pt-8">
                  <h4 className="font-black uppercase text-[10px] tracking-[0.3em] text-slate-400 flex items-center gap-3">
                    <div className="h-[1px] flex-grow bg-slate-100 dark:bg-slate-800" /> Suggested Next
@@ -216,7 +197,6 @@ export default function PublicTripDetails() {
                  </div>
               </div>
 
-              {/* Bug Support */}
               <div className="p-10 bg-rose-50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-900/30 rounded-[3.5rem] space-y-4">
                  <div className="flex items-center gap-3 text-rose-600 font-black uppercase text-[10px] tracking-widest">
                    <Bug size={16} /> Found a bug?
@@ -235,7 +215,6 @@ export default function PublicTripDetails() {
   );
 }
 
-// Skeleton Loader UI
 function DetailsSkeleton() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#020617] animate-pulse">

@@ -88,11 +88,8 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-[#020617] pt-24 pb-20 selection:bg-indigo-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
-        {/* --- Hero Header Section --- */}
         <div className="relative group overflow-hidden bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200/60 dark:border-slate-800/50 shadow-sm transition-all duration-500 hover:shadow-xl hover:shadow-indigo-500/5">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-indigo-50/50 to-transparent dark:from-indigo-900/10 pointer-events-none" />
-          
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-indigo-50/50 to-transparent dark:from-indigo-900/10 pointer-events-none" />          
           <div className="relative p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
             <div className="relative">
               <div className="absolute -inset-1.5 bg-gradient-to-tr from-indigo-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
@@ -110,7 +107,6 @@ export default function ProfilePage() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-full text-[10px] font-bold uppercase tracking-widest border border-indigo-100 dark:border-indigo-500/20">
                   <Zap size={14} fill="currentColor" /> Pro Explorer
                 </div>
-                {/* Admin Status - Static, Non-Clickable */}
                 {isAdmin && (
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full text-[10px] font-black uppercase tracking-widest">
                     <ShieldCheck size={14} /> System Admin
@@ -139,7 +135,6 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* --- Bento Grid Analytics --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-4 space-y-6">
             <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200/60 dark:border-slate-800/50 shadow-sm">
@@ -219,7 +214,6 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* --- Simple Identity Modal --- */}
       {isEditModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity">
           <div className="bg-white dark:bg-slate-900 w-full max-w-md rounded-[3rem] shadow-2xl overflow-hidden p-10 relative">
