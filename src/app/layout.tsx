@@ -55,6 +55,7 @@ import { AuthProvider } from "../context/AuthContext";
 import { usePathname } from "next/navigation";
 import Navbar from "@/src/components/Navbar";
 import Footer from "@/src/components/Footer";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,6 +90,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SessionProvider>
           <AuthProvider>
             
             {/* ১. যদি ড্যাশবোর্ড হয়, তবে কোনো মেইন নেভবার/ফুটার দেখাবে না */}
@@ -108,6 +110,10 @@ export default function RootLayout({
             )}
 
           </AuthProvider>
+
+
+
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

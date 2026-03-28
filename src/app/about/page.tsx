@@ -70,7 +70,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* --- Vision Section (The Big Banner) --- */}
+      {/* --- Vision Section*/}
       <div className="py-24 bg-slate-900 dark:bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full -mr-64 -mt-64"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -98,7 +98,6 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Value 1 */}
           <div className="group">
             <div className="w-16 h-16 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
               <Zap className="text-blue-600 group-hover:text-white transition-colors" size={24} />
@@ -109,7 +108,6 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Value 2 */}
           <div className="group">
             <div className="w-16 h-16 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
               <Globe className="text-blue-600 group-hover:text-white transition-colors" size={24} />
@@ -120,7 +118,6 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Value 3 */}
           <div className="group">
             <div className="w-16 h-16 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors duration-500">
               <Heart className="text-blue-600 group-hover:text-white transition-colors" size={24} />
@@ -133,7 +130,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* --- Footer CTA Section --- */}
       <div className="max-w-7xl mx-auto px-6 pb-24">
         <div className="relative bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3rem] p-12 md:p-20 overflow-hidden text-center shadow-2xl shadow-blue-500/30">
           <div className="relative z-10">
@@ -155,8 +151,7 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          
-          {/* Decorative Background Elements */}
+
           <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -ml-32 -mt-32"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-black/10 blur-[80px] rounded-full -mr-32 -mb-32"></div>
         </div>
