@@ -14,16 +14,15 @@ export default function ManageContentPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   
-  // Pagination States
+  // Pagination 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5; // প্রতি পেজে কয়টি ডাটা দেখাবে
+  const itemsPerPage = 5; 
 
   const fetchContents = async () => {
     try {
       setLoading(true);
       const res = await axiosInstance.get("/admin/contents");
       if (res.data.success) {
-        // নতুন কন্টেন্ট আগে দেখানোর জন্য সর্টিং (Latest First)
         const sortedData = res.data.data.sort((a: any, b: any) => 
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
         );
@@ -48,7 +47,6 @@ export default function ManageContentPage() {
     }
   };
 
-  // ১. সার্চ ফিল্টারিং
   const filteredContents = useMemo(() => {
     return contents.filter((item) => {
       const title = item.title || item.destination || "";
@@ -56,7 +54,6 @@ export default function ManageContentPage() {
     });
   }, [contents, searchTerm]);
 
-  // ২. প্যাগিনেশন লজিক
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredContents.slice(indexOfFirstItem, indexOfLastItem);
@@ -71,8 +68,6 @@ export default function ManageContentPage() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-8 p-6">
-      
-      {/* --- Header --- */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter uppercase italic">
@@ -86,7 +81,6 @@ export default function ManageContentPage() {
         </button>
       </div>
 
-      {/* --- Search --- */}
       <div className="relative w-full md:w-96">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
         <input 
@@ -96,8 +90,6 @@ export default function ManageContentPage() {
           onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
         />
       </div>
-
-      {/* --- Table --- */}
       <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200/60 shadow-sm overflow-hidden">
         <table className="w-full text-left">
           <thead>
@@ -146,7 +138,6 @@ export default function ManageContentPage() {
           </tbody>
         </table>
 
-        {/* --- Pagination Controls --- */}
         <div className="p-6 bg-slate-50/50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
           <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
             Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredContents.length)} of {filteredContents.length}

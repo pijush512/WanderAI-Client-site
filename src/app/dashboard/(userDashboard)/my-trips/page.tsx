@@ -17,22 +17,17 @@ export default function MyTripsPage() {
   const [budgetFilter, setBudgetFilter] = useState<"all" | "cheap" | "mid" | "high">("all");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const filterRef = useRef<HTMLDivElement>(null);
-
-  // বাজেট স্টাইল হেল্পার - আপনার ডেটাবেসের ভ্যালু অনুযায়ী কালার ফিক্স করা হয়েছে
   const getBudgetStyle = (budget: string) => {
     const b = budget?.toLowerCase() || "";
     
-    // ১. Cheap ক্যাটাগরি (আপনার ডেটাতে যেটা শুধু "budget" হিসেবে আছে)
     if (b === "budget" || b.includes("cheap")) {
       return "bg-blue-50 text-blue-600 border-blue-100 dark:bg-blue-900/20 dark:border-blue-800";
     }
-    
-    // ২. Mid ক্যাটাগরি (আপনার ডেটাতে যেটা "mid-range" হিসেবে আছে)
+
     if (b.includes("mid") || b.includes("moderate")) {
       return "bg-amber-50 text-amber-600 border-amber-100 dark:bg-amber-900/20 dark:border-amber-800";
     }
     
-    // ৩. High ক্যাটাগরি (আপনার ডেটাতে যেটা "luxury" হিসেবে আছে)
     if (b.includes("luxury") || b.includes("high")) {
       return "bg-rose-50 text-rose-600 border-rose-100 dark:bg-rose-900/20 dark:border-rose-800";
     }
@@ -89,7 +84,6 @@ export default function MyTripsPage() {
     }
   };
 
-  // ফিল্টার লজিক - আপনার DB ভ্যালু "Budget", "Mid-range", "Luxury" এর সাথে ম্যাচ করা হয়েছে
   const processedTrips = trips
     .filter((trip: any) => {
       const matchesSearch = trip.destination.toLowerCase().includes(searchTerm.toLowerCase());
@@ -116,7 +110,6 @@ export default function MyTripsPage() {
 
   return (
     <div className="p-4 md:p-8 space-y-6 animate-in fade-in duration-500">
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">
@@ -132,7 +125,6 @@ export default function MyTripsPage() {
         </Link>
       </div>
 
-      {/* Toolbar */}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
@@ -178,7 +170,6 @@ export default function MyTripsPage() {
         </div>
       </div>
 
-      {/* Table */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">

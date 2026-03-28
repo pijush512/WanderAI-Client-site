@@ -18,7 +18,6 @@ export default function DashboardOverview() {
   const [reviews, setReviews] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // ডাটাবেস থেকে লাইভ ডাটা ফেচিং
   useEffect(() => {
     const fetchLiveData = async () => {
       const token = document.cookie
@@ -33,7 +32,6 @@ export default function DashboardOverview() {
 
       try {
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        // আপনার API এন্ডপয়েন্ট অনুযায়ী কল
         const [tripRes, reviewRes] = await Promise.all([
           axios.get("http://localhost:5000/api/v1/ai/my-trips", config),
           axios.get("http://localhost:5000/api/v1/ai/my-reviews", config)
@@ -51,9 +49,8 @@ export default function DashboardOverview() {
     if (user?._id) fetchLiveData();
   }, [user?._id]);
 
-  // চার্টের জন্য রিয়েল ডাটা প্রসেসিং (Demo data সম্পূর্ণ বাদ)
   const liveChartData = trips.map(trip => ({
-    name: trip.destination.split(',')[0], // সিটির নাম ছোট করার জন্য
+    name: trip.destination.split(',')[0], 
     budget: parseInt(trip.budget?.replace(/[^0-9]/g, '')) || 0, // "$500" -> 500
     days: trip.days
   }));
@@ -70,7 +67,6 @@ export default function DashboardOverview() {
   return (
     <div className="max-w-7xl mx-auto py-10 px-6 space-y-12 bg-white dark:bg-slate-950 min-h-screen">
       
-      {/* --- LIVE HEADER --- */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-100 dark:border-slate-900 pb-10">
         <div className="space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 rounded-full text-emerald-600 text-[9px] font-black uppercase tracking-widest">
@@ -86,7 +82,6 @@ export default function DashboardOverview() {
         </div>
       </div>
 
-      {/* --- LIVE METRICS GRID --- */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {[
           { label: "Total Records", val: trips.length, icon: Database, color: "text-blue-600" },
@@ -106,10 +101,8 @@ export default function DashboardOverview() {
         ))}
       </div>
 
-      {/* --- LIVE DATA VISUALIZATION --- */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         
-        {/* Expenditure Analytics */}
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-center gap-3 px-2">
             <BarChart3 size={18} className="text-slate-400" />
@@ -146,7 +139,6 @@ export default function DashboardOverview() {
           </div>
         </div>
 
-        {/* Data Distribution */}
         <div className="space-y-6">
           <div className="flex items-center gap-3 px-2">
             <Activity size={18} className="text-slate-400" />
@@ -172,8 +164,6 @@ export default function DashboardOverview() {
           </div>
         </div>
       </div>
-
-      {/* --- LIVE DATABASE LEDGER (STATIC TABLE) --- */}
       <div className="space-y-8 pt-4">
         <div className="flex items-center gap-3 px-2">
           <Database size={18} className="text-slate-400" />

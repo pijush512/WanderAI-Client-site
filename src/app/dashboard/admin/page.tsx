@@ -72,8 +72,6 @@ export default function AdminOverview() {
 
   return (
     <div className="p-4 md:p-8 space-y-10 bg-slate-50/50 dark:bg-slate-950 min-h-screen animate-in fade-in duration-1000">
-      
-      {/* --- Header Section --- */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
@@ -92,14 +90,10 @@ export default function AdminOverview() {
           <RefreshCcw size={14} /> Refresh Intelligence
         </button>
       </div>
-
-      {/* --- Real-time Stats Grid --- */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {statsCards.map((stat, i) => (
           <div key={i} className={`bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border ${stat.border} dark:border-slate-800 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl group relative overflow-hidden`}>
-            {/* Background Accent */}
-            <div className={`absolute top-0 right-0 w-24 h-24 ${stat.bg} blur-3xl rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform`}></div>
-            
+            <div className={`absolute top-0 right-0 w-24 h-24 ${stat.bg} blur-3xl rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform`}></div>            
             <div className="flex justify-between items-start mb-6 relative z-10">
                <div className={`p-4 rounded-2xl ${stat.bg} dark:bg-slate-800 ${stat.color} ring-1 ring-inset ${stat.border}`}>
                   <stat.icon size={22} />
@@ -111,7 +105,6 @@ export default function AdminOverview() {
             </div>
             
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest relative z-10">{stat.label}</p>
-            {/* Fixed the overflow issue here using min-w-0 and break-words */}
             <h3 className="text-xl lg:text-2xl font-black text-slate-900 dark:text-white mt-1 uppercase tracking-tighter truncate break-words relative z-10">
               {stat.value}
             </h3>
@@ -120,8 +113,6 @@ export default function AdminOverview() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* --- Neural Graph Section --- */}
         <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-8 rounded-[3rem] border border-slate-200 dark:border-slate-800 shadow-sm relative group overflow-hidden">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <BarChart3 size={120} />
@@ -174,11 +165,8 @@ export default function AdminOverview() {
             </div>
         </div>
 
-        {/* --- Advanced Logs Panel --- */}
         <div className="bg-slate-900 dark:bg-black rounded-[3rem] p-8 text-white relative overflow-hidden flex flex-col shadow-2xl border border-slate-800">
-            {/* Animated Grid Background */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:20px_20px]"></div>
-            
+            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:20px_20px]"></div>           
             <h4 className="text-[11px] font-black uppercase tracking-[0.25em] mb-10 flex items-center gap-3 relative z-10 text-indigo-400">
               <Clock size={18} className="animate-pulse" /> Live Telemetry
             </h4>
@@ -223,7 +211,6 @@ export default function AdminOverview() {
               )}
             </div>
 
-            {/* Matrix Decoration */}
             <div className="mt-6 pt-6 border-t border-white/5 z-10">
               <div className="flex justify-between items-center text-[8px] font-bold text-slate-600 uppercase tracking-widest">
                 <span>Buffer Status: Stable</span>
@@ -234,7 +221,6 @@ export default function AdminOverview() {
 
       </div>
 
-      {/* Custom Styles for Scrollbar */}
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 4px;

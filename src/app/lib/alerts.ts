@@ -24,6 +24,6 @@ export const showAlert = (title: string, text: string, icon: 'success' | 'error'
     title: title,
     text: text,
     icon: icon,
-    confirmButtonColor: '#2563eb', // আপনার ব্লু থিমের সাথে মিল রেখে
+    confirmButtonColor: '#2563eb', 
   });
 };

@@ -30,12 +30,10 @@ export default function TripDetailsPage() {
   const [trip, setTrip] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-  // --- নতুন যোগ করুন এখানে ---
-  const [reviews, setReviews] = useState<any[]>([]); // সার্ভার থেকে আসা সব রিভিউ রাখার জন্য
-  const [newRating, setNewRating] = useState(5); // নতুন রিভিউর স্টার রেটিং (ডিফল্ট ৫)
-  const [newComment, setNewComment] = useState(""); // নতুন রিভিউর কমেন্ট
-  const [submitting, setSubmitting] = useState(false); // বাটন লোডিং দেখানোর জন্য
-  // ------------------------
+  const [reviews, setReviews] = useState<any[]>([]); 
+  const [newRating, setNewRating] = useState(5); 
+  const [newComment, setNewComment] = useState(""); 
+  const [submitting, setSubmitting] = useState(false); 
 
   const fetchReviews = async () => {
     try {
@@ -51,7 +49,6 @@ export default function TripDetailsPage() {
           headers: { Authorization: `Bearer ${token}` },
         },
       );
-      // শুধু এই নির্দিষ্ট ট্রিপের রিভিউগুলো ফিল্টার করে নিচ্ছি
       const tripReviews = response.data.data.filter(
         (r: any) => r.trip?._id === id,
       );
@@ -98,7 +95,6 @@ export default function TripDetailsPage() {
     }
   }, [id]);
 
-  // Submite review
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newComment.trim()) return;
@@ -111,17 +107,14 @@ export default function TripDetailsPage() {
       await axios.post(
         `http://localhost:5000/api/v1/ai/create-review`,
         {
-          trip: id, // ট্রিপ আইডি
-          rating: newRating, // স্টার রেটিং
-          comment: newComment, // ইউজারের মন্তব্য
+          trip: id, 
+          rating: newRating, 
+          comment: newComment, 
         },
         { headers: { Authorization: `Bearer ${token}` } },
       );
-
-      // সফল হলে ইনপুট ফিল্ড ক্লিয়ার করা
       setNewComment("");
       setNewRating(5);
-      // নতুন রিভিউটি সাথে সাথে লিস্টে দেখানোর জন্য পুনরায় ফেচ করা
       fetchReviews();
       alert("Review submitted successfully!");
     } catch (error) {
@@ -159,7 +152,6 @@ export default function TripDetailsPage() {
 
   return (
     <div className="max-w-7xl mx-auto p-4 md:py-10 space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-700">
-      {/* ১. টপ অ্যাকশন বার */}
       <div className="flex items-center justify-between">
         <Link
           href="/dashboard/my-trips"
@@ -181,7 +173,6 @@ export default function TripDetailsPage() {
         </div>
       </div>
 
-      {/* ২. হিরো সেকশন - Overview (Requirement 5.1) */}
       <div className="relative overflow-hidden bg-slate-900 rounded-[3.5rem] p-8 md:p-16 text-white border border-slate-800 shadow-2xl">
         <div className="relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/20 backdrop-blur-md border border-blue-500/30 rounded-full text-[10px] font-black text-blue-300 uppercase tracking-widest">
@@ -199,7 +190,6 @@ export default function TripDetailsPage() {
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
       </div>
 
-      {/* ৩. কি ইনফরমেশন কার্ডস (Requirement 5.2) */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           {
@@ -240,9 +230,7 @@ export default function TripDetailsPage() {
         ))}
       </div>
 
-      {/* ৪. মেইন কন্টেন্ট গ্রিড */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* বাম পাশ: ইটিনারি প্যারাগ্রাফ স্টাইল (Requirement 5.1 & Improved UX) */}
         <div className="lg:col-span-2 space-y-8">
           <div className="bg-white dark:bg-slate-900 rounded-[3rem] p-8 md:p-12 border border-slate-100 dark:border-slate-800 shadow-sm">
             <div className="flex items-center justify-between mb-10">
@@ -258,14 +246,12 @@ export default function TripDetailsPage() {
               {trip.plan ? (
                 <div className="space-y-10">
                   {typeof trip.plan === "object" ? (
-                    // সুন্দর টাইমলাইন এবং প্যারাগ্রাফ স্টাইল
                     Object.entries(trip.plan).map(
                       ([day, description]: [string, any], index) => (
                         <div
                           key={index}
                           className="relative pl-10 border-l-2 border-slate-100 dark:border-slate-800 pb-10 last:pb-0 group"
                         >
-                          {/* টাইমলাইন ডট */}
                           <div className="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-blue-600 border-4 border-white dark:border-slate-900 group-hover:scale-125 transition-transform shadow-md" />
 
                           <div className="space-y-3">
@@ -285,7 +271,6 @@ export default function TripDetailsPage() {
                       ),
                     )
                   ) : (
-                    // যদি প্ল্যান শুধু স্ট্রিং হয়
                     <div className="p-8 bg-slate-50 dark:bg-slate-800/40 rounded-[2.5rem] border border-slate-100 dark:border-slate-800">
                       <p className="text-slate-600 dark:text-slate-400 font-medium text-lg leading-relaxed first-letter:text-5xl first-letter:font-black first-letter:text-blue-600 first-letter:mr-2">
                         {trip.plan}
@@ -307,17 +292,13 @@ export default function TripDetailsPage() {
             </div>
           </div>
 
-          {/* রিভিউ সেকশন (Requirement 5.3) */}
-
           <div className="bg-slate-50 dark:bg-slate-800/20 rounded-[3rem] p-8 md:p-12 border border-slate-200 dark:border-slate-800 space-y-10">
-            {/* রিভিউ দেওয়ার ফর্ম */}
             <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-sm border border-slate-100 dark:border-slate-800">
               <h3 className="text-xl font-black mb-6 flex items-center gap-3 tracking-tight">
                 <Sparkles className="text-blue-600" size={20} /> Rate Your AI
                 Experience
               </h3>
               <form onSubmit={handleSubmitReview} className="space-y-4">
-                {/* স্টার সিলেকশন */}
                 <div className="flex gap-2 mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <button
@@ -333,7 +314,6 @@ export default function TripDetailsPage() {
                     </button>
                   ))}
                 </div>
-                {/* কমেন্ট বক্স */}
                 <textarea
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
@@ -353,8 +333,6 @@ export default function TripDetailsPage() {
                 </button>
               </form>
             </div>
-
-            {/* রিয়েল রিভিউ লিস্ট */}
             <div className="space-y-6">
               <h3 className="text-2xl font-black flex items-center gap-3 tracking-tighter uppercase">
                 <CheckCircle2 className="text-emerald-500" /> Community Insights
@@ -400,9 +378,7 @@ export default function TripDetailsPage() {
           </div>
         </div>
 
-        {/* ডান পাশ: সাইডবার (Requirement 5.4) */}
         <div className="space-y-8">
-          {/* রিলেটেড আইটেমস */}
           <div className="bg-white dark:bg-slate-900 p-8 rounded-[3rem] border border-slate-100 dark:border-slate-800 shadow-sm">
             <h3 className="text-xl font-black mb-8 flex items-center gap-3">
               <Sparkles className="text-blue-600" size={22} /> Suggested Next
@@ -428,7 +404,6 @@ export default function TripDetailsPage() {
             </div>
           </div>
 
-          {/* কল টু অ্যাকশন */}
           <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
             <div className="relative z-10">
               <MapPin className="mb-6 text-blue-400" size={40} />

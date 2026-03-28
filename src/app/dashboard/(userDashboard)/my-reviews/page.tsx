@@ -83,7 +83,6 @@ export default function MyReviewsPage() {
   return (
     <div className="p-4 md:p-8 space-y-8 animate-in fade-in duration-700">
       
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight uppercase">
@@ -96,7 +95,6 @@ export default function MyReviewsPage() {
         </div>
       </div>
 
-      {/* Search and Sort (Trips Page এর মতো ডিজাইন) */}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
@@ -108,8 +106,6 @@ export default function MyReviewsPage() {
             className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl outline-none focus:ring-2 ring-blue-500/20 transition-all font-medium text-sm"
           />
         </div>
-        
-        {/* Sort Dropdown Section */}
         <div className="relative" ref={dropdownRef}>
           <button 
             onClick={() => setIsSortOpen(!isSortOpen)}
@@ -143,7 +139,6 @@ export default function MyReviewsPage() {
         </div>
       </div>
 
-      {/* Table Section */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">

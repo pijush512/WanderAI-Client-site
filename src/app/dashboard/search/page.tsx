@@ -4,7 +4,6 @@ import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { MapPin, Tooltip, Wrench, Search as SearchIcon } from "lucide-react";
 
-// সার্ভিস ডাটার ইন্টারফেস (আপনার PRD অনুযায়ী)
 interface ServiceResult {
   id: number;
   serviceName: string;
@@ -27,12 +26,9 @@ export default function SearchResults() {
 
   const fetchResults = async () => {
     setLoading(true);
-    
-    // লোডিং এনিমেশন দেখার জন্য কৃত্রিম দেরি (Real API থাকলে এটি সরিয়ে দেবেন)
     await new Promise((resolve) => setTimeout(resolve, 800));
 
     try {
-      // আপনার PRD-তে উল্লেখিত লোকাল সার্ভিসগুলোর ডামি ডাটা
       const mockServices: ServiceResult[] = [
         { id: 1, serviceName: "AC Repair & Services", location: "Tangail", providerName: "Karim Electronics", price: "500 BDT" },
         { id: 2, serviceName: "Professional Plumbing", location: "Dhaka", providerName: "Quick Fix Ltd", price: "300 BDT" },
@@ -40,7 +36,6 @@ export default function SearchResults() {
         { id: 4, serviceName: "Electrical Wiring", location: "Chittagong", providerName: "Power Solutions", price: "800 BDT" },
       ];
 
-      // ১. সার্ভিস নাম অথবা লোকেশন—যেকোনোটির সাথে মিললে ডাটা দেখাবে
       const filtered = mockServices.filter(
         (item) =>
           item.serviceName.toLowerCase().includes(query.toLowerCase()) ||
@@ -57,7 +52,6 @@ export default function SearchResults() {
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      {/* হেডার সেকশন */}
       <div className="border-b border-slate-200 dark:border-slate-800 pb-6">
         <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white flex items-center gap-3">
           <SearchIcon className="text-blue-600" size={28} />
@@ -67,8 +61,6 @@ export default function SearchResults() {
           Showing local services for: <span className="font-bold text-blue-600 px-2 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg">"{query}"</span>
         </p>
       </div>
-
-      {/* লোডিং স্টেট */}
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (

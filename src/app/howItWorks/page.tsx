@@ -32,16 +32,12 @@ export default function HowItWorks() {
 
   return (
     <section className="relative min-h-screen bg-white dark:bg-[#020617] transition-all duration-500 overflow-hidden">
-      
-      {/* --- Background Elements --- */}
       <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
       </div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full -mr-64 -mt-64"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
-        
-        {/* --- Header Section --- */}
         <div className="max-w-4xl mb-32">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg mb-8">
             <Sparkles size={14} className="text-blue-600" />
@@ -55,9 +51,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* --- Main 3-Step Process --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 relative mb-48">
-          {/* Connecting Line (Desktop) */}
           <div className="hidden md:block absolute top-1/4 left-0 w-full h-[1px] bg-slate-100 dark:bg-slate-800 z-0"></div>
 
           {steps.map((step, i) => (
@@ -81,7 +75,6 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* --- AI Integration Banner --- */}
         <div className="bg-slate-900 dark:bg-slate-900/50 rounded-[3rem] p-12 md:p-20 mb-48 overflow-hidden relative">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -109,7 +102,6 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* --- Why WanderAI Grid --- */}
         <div className="mb-48">
           <div className="text-center mb-20">
             <h2 className="text-sm font-black text-blue-600 uppercase tracking-[0.3em] mb-4">Core Strengths</h2>
@@ -126,7 +118,6 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* --- Final CTA Section --- */}
         <div className="relative bg-blue-600 rounded-[3rem] p-12 md:p-24 text-center overflow-hidden shadow-2xl shadow-blue-500/20">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">
@@ -139,7 +130,6 @@ export default function HowItWorks() {
               Get Started Now <ArrowRight size={16} />
             </Link>
           </div>
-          {/* Decorative shapes */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -ml-32 -mt-32"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-black/10 blur-[80px] rounded-full -mr-32 -mb-32"></div>
         </div>

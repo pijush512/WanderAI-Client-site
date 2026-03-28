@@ -20,8 +20,6 @@ export default function AIConfigPage() {
   const handleSave = async () => {
     setLoading(true);
     try {
-      // এখানে আপনি চাইলে একটি নতুন API এন্ডপয়েন্ট বানাতে পারেন সেটিংস সেভ করার জন্য
-      // আপাতত আমি একটি সাকসেস এলার্ট দিচ্ছি
       setTimeout(() => {
         showAlert("AI Configuration Updated Successfully", "success");
         setLoading(false);
@@ -34,7 +32,6 @@ export default function AIConfigPage() {
 
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-8">
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
@@ -55,7 +52,6 @@ export default function AIConfigPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column: Settings Form */}
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-8 rounded-[2.5rem] shadow-sm space-y-6">
             <div className="flex items-center gap-3 pb-4 border-b border-slate-50">
@@ -94,7 +90,6 @@ export default function AIConfigPage() {
             </div>
           </div>
 
-          {/* Security & Access */}
           <div className="bg-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
             <div className="relative z-10 space-y-4">
               <div className="flex items-center gap-3">
@@ -115,7 +110,6 @@ export default function AIConfigPage() {
           </div>
         </div>
 
-        {/* Right Column: Mini Status Card */}
         <div className="space-y-6">
           <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-8 rounded-[2.5rem] shadow-sm">
             <h3 className="font-black uppercase text-xs tracking-widest text-slate-400 mb-6 text-center">Inference Status</h3>
