@@ -30,10 +30,10 @@ export default function TripDetailsPage() {
   const [trip, setTrip] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-  const [reviews, setReviews] = useState<any[]>([]); 
-  const [newRating, setNewRating] = useState(5); 
-  const [newComment, setNewComment] = useState(""); 
-  const [submitting, setSubmitting] = useState(false); 
+  const [reviews, setReviews] = useState<any[]>([]);
+  const [newRating, setNewRating] = useState(5);
+  const [newComment, setNewComment] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   const fetchReviews = async () => {
     try {
@@ -44,7 +44,7 @@ export default function TripDetailsPage() {
       }
       const token = rawToken?.startsWith('"') ? JSON.parse(rawToken) : rawToken;
       const response = await axios.get(
-        `http://localhost:5000/api/v1/ai/my-reviews`,
+        `https://wander-ai-server-site.vercel.app/api/v1/ai/my-reviews`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -73,7 +73,7 @@ export default function TripDetailsPage() {
           : rawToken;
 
         const response = await axios.get(
-          `http://localhost:5000/api/v1/ai/my-trips`,
+          `https://wander-ai-server-site.vercel.app/api/v1/ai/my-trips`,
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -105,11 +105,11 @@ export default function TripDetailsPage() {
       const token = rawToken?.startsWith('"') ? JSON.parse(rawToken) : rawToken;
 
       await axios.post(
-        `http://localhost:5000/api/v1/ai/create-review`,
+        `https://wander-ai-server-site.vercel.app/api/v1/ai/create-review`,
         {
-          trip: id, 
-          rating: newRating, 
-          comment: newComment, 
+          trip: id,
+          rating: newRating,
+          comment: newComment,
         },
         { headers: { Authorization: `Bearer ${token}` } },
       );

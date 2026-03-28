@@ -36,11 +36,11 @@ export default function CreateTripPage() {
       setLoading(true);
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/v1/ai/generate-trip",
+        "https://wander-ai-server-site.vercel.app/api/v1/ai/generate-trip",
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, 
+            Authorization: `Bearer ${token}`,
           },
         },
       );
@@ -50,7 +50,7 @@ export default function CreateTripPage() {
           "Success!",
           "AI has successfully crafted your journey.",
           "success",
-        );       
+        );
         const tripId = response.data.data._id;
         router.push(`/dashboard/my-trips/${tripId}`);
       }
