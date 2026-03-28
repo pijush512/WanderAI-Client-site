@@ -35,14 +35,10 @@ export default function CategoryScroll({ activeCategory, onCategoryChange }: Cat
   };
 
   return (
-    // ১. এখানে 'max-w-7xl' এর বদলে 'w-full' নিশ্চিত করুন এবং কন্টেইনারকে সেন্টারে রাখুন
     <div className="w-full bg-white/80 dark:bg-[#020617]/80 backdrop-blur-2xl top-16 z-40 border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-500">
-      
-      {/* ২. প্যাডিং সরিয়ে 'px-4' বা 'px-0' দিন এবং 'justify-between' বা 'justify-around' ব্যবহার করুন */}
       <div className="max-w-7xl mx-auto px-16  overflow-hidden">
         <div 
           ref={scrollRef}
-          // ৩. 'justify-between' বড় স্ক্রিনে সমান দূরত্ব বজায় রাখবে
           className="flex items-center justify-between gap-2 md:gap-0 overflow-x-auto py-6 no-scrollbar scroll-smooth snap-x px-4 md:px-10"
         >
           {categories.map((cat) => {
@@ -53,7 +49,6 @@ export default function CategoryScroll({ activeCategory, onCategoryChange }: Cat
               <button
                 key={cat.id}
                 onClick={(e) => handleCategoryClick(cat.id, e)}
-                // ৪. 'flex-1' বা 'min-w-[120px]' দিলে আইটেমগুলো সমান জায়গা নিবে
                 className={`group relative flex flex-col items-center flex-1 min-w-[90px] md:min-w-[110px] transition-all duration-500 snap-center outline-none ${
                   isActive ? "scale-105" : "hover:translate-y-[-2px]"
                 }`}
