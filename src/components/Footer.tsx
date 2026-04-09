@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Github, Mail, Plane, MapPin, Send } from "lucide-react";
+import { Facebook, Twitter, Instagram, Github, Mail, Plane, MapPin, Send, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -84,8 +84,8 @@ const Footer = () => {
               </button>
             </div>
             <div className="flex gap-4">
-              <Link href="https://facebook.com" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
-                <Facebook size={18} />
+              <Link href="https://linkedin.com/in/pijushsarkeralways" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <Linkedin size={18} />
               </Link>
               <Link href="https://twitter.com" target="_blank" className="p-2.5 rounded-xl bg-slate-200/50 dark:bg-slate-900 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
                 <Twitter size={18} />
