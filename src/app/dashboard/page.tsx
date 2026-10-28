@@ -47,16 +47,12 @@ export default function DashboardOverview() {
 
       try {
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const [tripRes, reviewRes] = await Promise.all([
-          axios.get(
-            "https://wander-ai-server-site.vercel.app/api/v1/ai/my-trips",
-            config,
-          ),
-          axios.get(
-            "https://wander-ai-server-site.vercel.app/api/v1/ai/my-reviews",
-            config,
-          ),
-        ]);
+        const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+
+const [tripRes, reviewRes] = await Promise.all([
+  axios.get(`${API_BASE_URL}/ai/my-trips`, config),
+  axios.get(`${API_BASE_URL}/ai/my-reviews`, config),
+]);
 
         if (tripRes.data.success) setTrips(tripRes.data.data || []);
         if (reviewRes.data.success) setReviews(reviewRes.data.data || []);

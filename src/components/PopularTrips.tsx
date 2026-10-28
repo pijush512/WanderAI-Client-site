@@ -25,7 +25,10 @@ export default function PopularTrips({ activeCategory }: { activeCategory: strin
     const fetchTrips = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/ai/all-trips`);
+        // const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/ai/all-trips`);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+        const response = await axios.get(`${apiUrl}/ai/all-trips`);
+        
         if (response.data.success) {
           setTrips(response.data.data);
           setFilteredTrips(response.data.data.slice(0, 8)); 

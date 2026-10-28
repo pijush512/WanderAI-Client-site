@@ -29,14 +29,13 @@ export default function PublicTripDetails() {
     const fetchDetails = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          `https://wander-ai-server-site.vercel.app/api/v1/ai/all-trips`,
-        );
-        if (response.data.success) {
-          const foundTrip = response.data.data.find(
-            (t: any) => t._id === params.id,
-          );
-          setTrip(foundTrip);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+        const response = await axios.get(`${apiUrl}/ai/trip-details/${params.id}`);
+        if (response.data.success && response.data.data) {
+          
+          setTrip(response.data.data);
+        } else {
+          setTrip(null);
         }
       } catch (err) {
         console.error("Error:", err);

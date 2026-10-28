@@ -67,8 +67,10 @@ export default function MyTripsPage() {
       if (!rawToken) return;
       const token = rawToken.startsWith('"') ? JSON.parse(rawToken) : rawToken;
 
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+
       const response = await axios.get(
-        `https://wander-ai-server-site.vercel.app/api/v1/ai/my-trips`,
+        `${API_URL}/ai/my-trips`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
