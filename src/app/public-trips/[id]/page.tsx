@@ -24,7 +24,7 @@ export default function PublicTripDetails() {
   const router = useRouter();
   const [trip, setTrip] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-
+// Use effect
   useEffect(() => {
     const fetchDetails = async () => {
       try {
