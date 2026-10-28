@@ -36,7 +36,8 @@ export default function CreateTripPage() {
       setLoading(true);
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://wander-ai-server-site.vercel.app/api/v1/ai/generate-trip",
+        // "https://wander-ai-server-site.vercel.app/api/v1/ai/generate-trip",
+        `${process.env.NEXT_PUBLIC_API_URL}/ai/generate-trip`,
         formData,
         {
           headers: {
